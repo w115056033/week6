@@ -11,7 +11,14 @@ This project evaluates **Multiple Linear Regression (OLS)** against **5 distinct
 🐙 **GitHub Repository**: **[https://github.com/w115056033/week6](https://github.com/w115056033/week6)**  
 🔗 **Live Demo**: **[https://w115056033.github.io/week6/](https://w115056033.github.io/week6/)**
 
-![50 Startups Interactive Regression & Feature Selection Explorer](dashboard_demo.png)
+
+<img width="1422" height="822" alt="image" src="https://github.com/user-attachments/assets/56c42543-e400-463b-88d4-2ec6d86fad85" />
+<img width="1422" height="637" alt="image" src="https://github.com/user-attachments/assets/b262b1f3-78a5-4f89-b1c2-28830cd94db3" />
+<img width="1407" height="537" alt="image" src="https://github.com/user-attachments/assets/b8dd1a74-aef3-4fee-9322-8a33f327d67a" />
+<img width="1465" height="341" alt="image" src="https://github.com/user-attachments/assets/05bf0507-9dfc-4176-8334-eb9e6859df83" />
+<img width="1422" height="657" alt="image" src="https://github.com/user-attachments/assets/ca01109d-0f62-4aaa-a996-a6ab949f2b3e" />
+
+
 
 The web application is styled with the professional SaaS statistical calculator layout inspired by [StatsUnlock](https://statsunlock.com/multiple-linear-regression-calculator/).
 
