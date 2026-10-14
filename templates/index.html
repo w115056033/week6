@@ -1403,6 +1403,241 @@
       }
     }
 
+
+    /* === Kyo-Modern Layout Refresh (2026) === */
+    body {
+      background-image:
+        radial-gradient(circle at 6% 8%, rgba(166, 48, 37, 0.16) 0%, transparent 34%),
+        radial-gradient(circle at 92% 12%, rgba(128, 98, 54, 0.14) 0%, transparent 30%),
+        radial-gradient(circle at 78% 82%, rgba(90, 112, 72, 0.13) 0%, transparent 32%),
+        linear-gradient(180deg, rgba(255, 252, 244, 0.03) 0%, rgba(255, 252, 244, 0) 55%),
+        repeating-linear-gradient(90deg, rgba(255, 247, 233, 0.014) 0px, rgba(255, 247, 233, 0.014) 1px, transparent 1px, transparent 4px);
+    }
+
+    .app-wrapper {
+      max-width: 1540px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      grid-template-areas:
+        "nav hero"
+        "nav deck"
+        "nav timeline"
+        "nav dashboard"
+        "footer footer";
+      gap: 20px;
+      align-items: start;
+    }
+
+    .top-nav {
+      grid-area: nav;
+      position: sticky;
+      top: 18px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+      border-left: 0;
+      border-top: 8px solid var(--cyan-neon);
+      border-radius: 20px 8px 20px 8px;
+      padding: 20px 16px;
+    }
+
+    .brand-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      line-height: 1.4;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 0.18em;
+      height: 170px;
+      align-items: flex-start;
+    }
+
+    .brand-tag {
+      margin-top: 6px;
+      letter-spacing: 0.1em;
+      writing-mode: horizontal-tb;
+    }
+
+    .nav-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    .live-status,
+    .btn-icon-action {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .hero-console {
+      grid-area: hero;
+      margin-bottom: 0;
+      border-left: 0;
+      border-top: 10px solid var(--cyan-neon);
+      border-radius: 30px 8px 24px 8px;
+      padding: 34px 32px;
+    }
+
+    .deck-section {
+      grid-area: deck;
+      margin-bottom: 0;
+      padding: 18px;
+      border-radius: 24px 8px 24px 8px;
+    }
+
+    .k-timeline-card {
+      grid-area: timeline;
+      margin-top: 0;
+      margin-bottom: 0;
+      border-radius: 20px 8px 20px 8px;
+    }
+
+    .dashboard-grid {
+      grid-area: dashboard;
+      grid-template-columns: 1.05fr 1.55fr;
+      grid-template-areas:
+        "equation metrics"
+        "equation charts"
+        "synth charts"
+        "table1 table2";
+      gap: 14px;
+    }
+
+    .dashboard-grid > .metric-hud-grid { grid-area: metrics; }
+    .dashboard-grid > .charts-split-grid { grid-area: charts; }
+    .dashboard-grid > .equation-terminal { grid-area: equation; }
+    .dashboard-grid > .synth-panel { grid-area: synth; }
+    .dashboard-grid > .data-table-card:nth-of-type(1) { grid-area: table1; }
+    .dashboard-grid > .data-table-card:nth-of-type(2) { grid-area: table2; }
+
+    .metric-hud-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 0;
+    }
+
+    .hud-card:last-child,
+    .hud-card:nth-last-child(2) {
+      grid-column: span 1;
+    }
+
+    .charts-split-grid {
+      grid-template-columns: 1fr;
+      margin-bottom: 0;
+    }
+
+    .equation-terminal,
+    .synth-panel,
+    .data-table-card,
+    .chart-panel-card {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .equation-terminal {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      border-left: 0;
+      border-top: 6px solid var(--cyan-neon);
+      border-radius: 24px 8px 24px 8px;
+    }
+
+    .equation-code {
+      font-size: 21px;
+      line-height: 1.9;
+      border-radius: 14px;
+    }
+
+    .synth-panel {
+      border-left: 0;
+      border-top: 6px solid var(--emerald-neon);
+      border-radius: 24px 8px 24px 8px;
+      padding: 18px;
+    }
+
+    .studio-footer {
+      grid-area: footer;
+      margin-top: 0;
+      border-radius: 20px 8px 20px 8px;
+    }
+
+    @media (max-width: 1380px) {
+      .app-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "nav"
+          "hero"
+          "deck"
+          "timeline"
+          "dashboard"
+          "footer";
+      }
+
+      .top-nav {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .brand-section {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .brand-title {
+        writing-mode: horizontal-tb;
+        height: auto;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-actions {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "metrics"
+          "charts"
+          "equation"
+          "synth"
+          "table1"
+          "table2";
+      }
+
+      .metric-hud-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .metric-hud-grid,
+      .algo-matrix,
+      .k-selector-rail {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
   </style>
 </head>
 <body>
@@ -1419,8 +1654,8 @@
         </div>
         <div>
           <div class="brand-title">
-            50 STARTUPS // ML STUDIO
-            <span class="brand-tag">CRISP-DM</span>
+            五十起業 解析工房
+            <span class="brand-tag">和 MODERN</span>
           </div>
         </div>
       </div>
@@ -1428,7 +1663,7 @@
       <div class="nav-actions">
         <div class="live-status">
           <span class="pulse-dot"></span>
-          <span>ENGINE ONLINE</span>
+          <span>稼働中</span>
         </div>
         <button id="themeToggleBtn" class="btn-icon-action" title="Toggle Theme">
           <i class="fa-solid fa-moon" id="themeIcon"></i>
@@ -1445,9 +1680,9 @@
     <section class="hero-console">
       <div class="hero-header-row">
         <div class="hero-title-area">
-          <h1>Feature Selection & Parsimony Studio</h1>
+          <h1>和風データ解析・最適特徴量工房</h1>
           <p>
-            An interactive statistical intelligence workbench benchmarking <strong>5 Machine Learning Feature Selection Algorithms</strong> against Multiple Linear Regression. Observe empirical bias-variance tradeoffs across feature counts $k=1 \dots 5$, pinpointing the <strong>2-feature optimal sweet spot</strong> and avoiding the <strong>5-feature overfitting cliff</strong>.
+            以和風介面重新演繹的互動式回歸分析工作台，對比 <strong>5 種特徵選擇演算法</strong> 與多元線性回歸表現。可即時觀察 $k=1 \dots 5$ 的偏差與變異權衡，掌握 <strong>k=2 的最佳甜蜜點</strong>，並避開 <strong>k=5 的過擬合斷崖</strong>。
           </p>
         </div>
       </div>
@@ -1488,7 +1723,7 @@
     <section class="deck-section">
       <div class="deck-section-title">
         <i class="fa-solid fa-microchip" style="color: var(--cyan-neon);"></i>
-        <span>1. SELECT FEATURE SELECTION ALGORITHM</span>
+        <span>壱、選擇特徵篩選演算法</span>
       </div>
       <div class="algo-matrix">
         <button class="algo-card-btn active" id="tabLasso">
@@ -1552,7 +1787,7 @@
       <div class="k-timeline-header">
         <div class="deck-section-title" style="margin-bottom: 0;">
           <i class="fa-solid fa-sliders" style="color: var(--cyan-neon);"></i>
-          <span>2. SET NUMBER OF PREDICTORS ($k=1 \dots 5$)</span>
+          <span>弐、設定預測子數量（$k=1 \dots 5$）</span>
         </div>
         <div id="parsimonyNotice" class="badge-tag badge-green">
           <i class="fa-solid fa-star"></i> Occam's Razor: 2 features yield minimum test RMSE ($8,198.80)
@@ -1707,7 +1942,7 @@
       <section class="synth-panel">
         <div class="deck-section-title">
           <i class="fa-solid fa-calculator" style="color: var(--cyan-neon);"></i>
-          <span>LIVE STARTUP PROFIT PREDICTION SYNTHESIZER</span>
+          <span>即時創業收益推演台</span>
         </div>
 
         <div class="synth-grid">
@@ -1763,7 +1998,7 @@
       <section class="data-table-card">
         <div class="deck-section-title">
           <i class="fa-solid fa-table-list" style="color: var(--cyan-neon);"></i>
-          <span>REGRESSION COEFFICIENTS & MULTICOLLINEARITY (VIF)</span>
+          <span>回歸係數與共線性檢視（VIF）</span>
         </div>
         <table class="custom-table">
           <thead>
@@ -1785,7 +2020,7 @@
       <section class="data-table-card">
         <div class="deck-section-title">
           <i class="fa-solid fa-crosshairs" style="color: var(--rose-neon);"></i>
-          <span>TEST SET RESIDUALS & TOP 10 ANOMALIES</span>
+          <span>測試集殘差與前 10 異常樣本</span>
         </div>
         <table class="custom-table">
           <thead>
@@ -1809,7 +2044,7 @@
     <!-- Footer -->
     <footer class="studio-footer">
       <div>
-        <strong>50 Startups Machine Learning Studio</strong> // CRISP-DM Framework // High-Performance Regression Analysis
+        <strong>五十起業 · 機械學習工房</strong> // CRISP-DM 架構 // 和風資料洞察
       </div>
       <div class="footer-links">
         <a href="https://github.com/w115056033/week6" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a>
